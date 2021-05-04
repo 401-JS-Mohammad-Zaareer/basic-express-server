@@ -15,9 +15,13 @@ describe('Testing server module', () => {
         expect(response.status).toEqual(404);
     });
 
-    it('handles bad method', async() => {
-        let response = await serverRequest.post('/');
-        expect(response.status).toEqual(404);
+    it('handles bad methods', async() => {
+        let response1 = await serverRequest.post('/');
+        let response2 = await serverRequest.put('/');
+        let response3 = await serverRequest.delete('/');
+        expect(response1.status).toEqual(404);
+        expect(response2.status).toEqual(404);
+        expect(response3.status).toEqual(404);
     });
 
 });
