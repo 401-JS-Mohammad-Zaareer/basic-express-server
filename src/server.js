@@ -5,7 +5,6 @@ const app = express();
 
 const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
-
 const errorHandler = require('./error-handlers/500.js');
 const notFoundHandler = require('./error-handlers/404.js');
 
