@@ -7,10 +7,16 @@ const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
 const errorHandler = require('./error-handlers/500.js');
 const notFoundHandler = require('./error-handlers/404.js');
+const carRouter = require('./routes/car.js');
+const phoneRouter = require('./routes/phone.js');
+
 
 // Global Middleware
 app.use(logger);
 app.use(express.json());
+
+app.use(carRouter);
+app.use(phoneRouter);
 
 app.get('/', (req, res) => {
     res.status(200).send('Welcome to Express server!');
